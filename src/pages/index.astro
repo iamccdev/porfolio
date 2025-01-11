@@ -6,6 +6,7 @@ import SectionContainer from "../components/SectionContainer.astro";
 import Works from "../components/Works.astro";
 import Contact from "../components/Contact.astro";
 import Home from "../components/Home.astro";
+import Experience from "../components/Experience.astro";
 ---
 
 <Layout
@@ -18,14 +19,15 @@ import Home from "../components/Home.astro";
 			<SectionContainer class="py-32 ">
 				<Home />
 			</SectionContainer>
-
 			<SectionContainer class="py-16  sm:max-xl:flex justify-center ">
 				<About />
 			</SectionContainer>
 			<SectionContainer class="py-16 md:max-xl:flex justify-center border-8">
+				<Experience />
+			</SectionContainer>
+			<SectionContainer class="py-16 md:max-xl:flex justify-center border-8">
 				<Works />
 			</SectionContainer>
-
 			<SectionContainer class="py-12">
 				<Contact />
 			</SectionContainer>
