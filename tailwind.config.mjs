@@ -15,8 +15,9 @@ module.exports = {
 			'BubbleColor':'#dbaa7c',
 			'NicknameColor': '#715819'
 		},
-		extend: {		
 
+		extend: {		
+			scrollBehavior: ['smooth']
 		},
 	},
 	plugins: [

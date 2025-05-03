@@ -1,83 +1,33 @@
-<div>
+<div id="Works" class="py-20">
     <div class="flex justify-center text-5xl text-black"><p>Works</p></div>
 
     <div
         id="controls-carousel"
-        class="py-6 relative w-full max-w-3xl mx-auto border-8"
+        .
+        class="py-6 relative w-full max-w-3xl mx-auto"
         data-carousel="static"
     >
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden md:h-96">
             <!-- Item 1 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+            <div class="duration-700 ease-in-out" data-carousel-item="active">
                 <img
-                    src="/ss.png"
+                    src="/Chat_App.png"
                     class="absolute block w-full rounded-3xl -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                     alt="..."
                 />
             </div>
             <!-- Item 2 -->
-            <div
-                class="hidden duration-700 ease-in-out"
-                data-carousel-item="active"
-            >
-                <img
-                    src="/ss.png"
-                    class="absolute block w-full rounded-3xl -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                    alt="..."
-                />
-            </div>
-            <!-- Item 3 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img
-                    src="/ss.png"
-                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                    alt="..."
-                />
-            </div>
-            <!-- Item 4 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img
-                    src="/ss.png"
-                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                    alt="..."
-                />
-            </div>
-            <!-- Item 5 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img
-                    src="/ss.png"
-                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                    alt="..."
-                />
+            <div class="duration-700 ease-in-out" data-carousel-item>
+                <h1
+                    class="absolute block w-full rounded-3xl -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 text-black text-lg text-center"
+                >
+                    Working in Java projects...
+                </h1>
             </div>
         </div>
         <!-- Slider controls -->
-        <button
-            type="button"
-            class="absolute top-0 start-0 z-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-            data-carousel-prev
-        >
-            <span
-                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
-            >
-                <svg
-                    class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 6 10"
-                >
-                    <path
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 1 1 5l4 4"></path>
-                </svg>
-                <span class="sr-only">Previous</span>
-            </span>
-        </button>
+
         <button
             type="button"
             class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
@@ -105,15 +55,42 @@
         </button>
     </div>
 
-    <div class="w-full py-8 flex justify-center">
-        <div class="bg-NavColor max-w-[700px] min-h-[150px] p-4 rounded-lg">
+    <div class="w-full py-8 flex justify-center" id="dynamicContent">
+        <script is:inline>
+            let isChat = true;
+            const contentArea = document.getElementById("dynamicContent");
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const btn = document.querySelector("[data-carousel-next]");
+                btn.addEventListener("click", handleChange);
+            });
+
+            function handleChange() {
+                isChat = !isChat;
+                renderContent();
+            }
+
+            function renderContent() {
+                let content = "";
+
+                if (isChat) {
+                    content = `<div class="bg-NavColor max-w-[700px] min-h-[90px] p-4 rounded-lg">
             <p class="text-sm font-normal text-black">
-                That's awesome. I think our users will really appreciate the
-                improvements. That's awesome. I think our users will really
-                appreciate the improvements. That's awesome. I think our users
-                will really appreciate the improvements. That's awesome. I think
-                our users will really appreciate the improvements.
+               This project is a real-time chat app, built with React, Node.js, and MongoDB, and deployed on Render.com
             </p>
-        </div>
+        </div>`;
+                } else {
+                    content = `<div class="bg-NavColor max-w-[700px] min-h-[90px] p-4 rounded-lg">
+            <p class="text-sm font-normal text-black">
+I'm currently learning Java, and all the projects I create along the way will be featured here.
+        </div>`;
+                }
+
+                contentArea.innerHTML = content;
+            }
+
+            // Render inicial
+            renderContent();
+        </script>
     </div>
 </div>

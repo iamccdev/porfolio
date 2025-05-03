@@ -17,20 +17,19 @@ import Experience from "../components/Experience.astro";
 		<div>
 			<NavBar />
 			<SectionContainer class="py-32 ">
-				<Home />
+				<Home/>
 			</SectionContainer>
-			<SectionContainer class="py-16  sm:max-xl:flex justify-center ">
+			<div class="p-28 md:max-xl:flex justify-center " id="Experience">
+				<Experience />
+			</div>
+			<SectionContainer class="py-16  sm:max-xl:flex justify-center " >
 				<About />
 			</SectionContainer>
-			<SectionContainer class="py-16 md:max-xl:flex justify-center border-8">
-				<Experience />
-			</SectionContainer>
-			<SectionContainer class="py-16 md:max-xl:flex justify-center border-8">
+
+			<SectionContainer class="py-16 md:max-xl:flex justify-center">
 				<Works />
 			</SectionContainer>
-			<SectionContainer class="py-12">
-				<Contact />
-			</SectionContainer>
+
 		</div>
 	</main>
 </Layout>
